@@ -5,10 +5,10 @@ import { config } from 'dotenv';
 config();
 
 const dbSettings = {
-    user: process.env.USUARIO,
-    password: process.env.PASSWORD,
-    server: process.env.SERVER,
-    database: process.env.DATABASE,
+    user: process.env.usuario,
+    password: process.env.password,
+    server: process.env.server,
+    database: process.env.database,
     options: {
         encrypt: true,
         trustServerCertificate: true, // Acepta certificados autofirmados
