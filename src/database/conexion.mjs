@@ -1,5 +1,7 @@
 import mysql from 'mysql';
 import { config } from 'dotenv';
+import { error } from 'console';
+import { rejects } from 'assert';
 
 // Cargar configuración desde el archivo .env
 config();
@@ -16,30 +18,27 @@ const connection = mysql.createConnection(dbSettings);
 
 connection.connect((err) => {
     if (err) {
-        console.error(`Error al conectar a la base de datos: ${err.message}`);
+        console.error(`Error al conectar a la base de datos: ${err.stack}`);
     } else {
         console.log('Conexión exitosa a la base de datos MySQL');
     }
 });
 
-// Función para realizar la consulta
-async function fetchData() {
-    try {
+export function ConsultaDatabase(){
+    return new Promise ((resolve,reject)=>{
         const query = 'SELECT * FROM pedidos';
-        connection.query(query, (error, results) => {
+        connection.query(query,(error, results)=>{
             if (error) {
-                console.error(`Error al realizar la consulta: ${error.message}`);
-            } else {
-                console.log('Resultado de la consulta:', results);
+                console.log(error.message);
+                reject(error)
+            }else{
+                resolve (results);
             }
-            // Cerrar la conexión después de la consulta
-            connection.end();
-        });
-    } catch (error) {
-        console.error(`Error en fetchData: ${error.message}`);
-    }
+        })
+    })
 }
 
 // Llamar a la función para realizar la consulta
-export default fetchData();
+export default ConsultaDatabase();
+
 

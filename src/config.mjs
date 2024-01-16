@@ -7,12 +7,3 @@ config();
 export default{
     port: process.env.port || 3000
 }
-
-/** // user: process.env.user,
-    // password: process.env.password,
-    // server: process.env.server,
-    // database: process.env.database
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'restaurante2' */
