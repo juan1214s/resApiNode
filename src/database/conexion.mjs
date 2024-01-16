@@ -10,11 +10,11 @@ const dbSettings = {
     server: process.env.server,
     database: process.env.database,
     options: {
-        encrypt: true,
-        trustServerCertificate: true, // Acepta certificados autofirmados
+        encrypt: true,//es un permiso por si voy a desplegar en azure
+        trustServerCertificate: true, 
     },
-};
-
+}
+console.log(dbSettings)
 async function GetConnection() {
     try {
         let pool = await sql.connect(dbSettings);

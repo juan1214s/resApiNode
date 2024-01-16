@@ -13,6 +13,7 @@ async function obtenerData() {
     } catch (error) {
         console.error(`Error al intentar obtener la conexión y realizar la consulta: ${error.message}`);
     }
+    
 }
 //obtiene el valor del puerto de app
 app.listen(app.get(`port`),()=>{
