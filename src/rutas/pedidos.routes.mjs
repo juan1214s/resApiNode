@@ -5,8 +5,9 @@ import { obtenerPedidos,insertarPedidos } from "../controles/pedidos.controles.m
 
 const router = Router();
 
-router.post('/mesero', insertarPedidos);
+
 router.get('/mesero',obtenerPedidos);
+router.post('/mesero', insertarPedidos);
 // router.post('/mesero',obtenerPedidos);
 // router.get('/Chef',pedidosChef);
 // router.post('/Chef',pedidosChef);

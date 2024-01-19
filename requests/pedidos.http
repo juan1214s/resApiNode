@@ -1,0 +1,16 @@
+@api = http://localhost:4000/mesero
+
+GET  {{api}}
+
+###
+POST {{api}}
+Content-Type: application/json
+
+{
+  "platillo": "fea",
+  "cantidad": 1,
+  "cliente": "rabia",
+  "precio": 12500,
+  "observaciones": "nada",
+  "estado": "pedido"
+}
