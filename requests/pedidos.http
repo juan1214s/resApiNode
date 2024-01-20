@@ -1,16 +1,37 @@
 @api = http://localhost:4000/mesero
 
+//buscar
 GET  {{api}}
 
+
 ###
+//
 POST {{api}}
 Content-Type: application/json
 
 {
-  "platillo": "fea",
+  "platillo": "perro",
   "cantidad": 1,
-  "cliente": "rabia",
-  "precio": 12500,
-  "observaciones": "nada",
+  "cliente": "juan",
+  "precio": 16000,
+  "observaciones": "poca salsa",
   "estado": "pedido"
+}
+
+###
+PUT {{api}}
+Content-Type: application/json
+
+{
+  "id_pedido": 53,
+  "estado": "prueba"
+}
+
+
+###
+DELETE {{api}}
+Content-Type: application/json
+
+{
+  "id_pedido":50
 }

@@ -1,15 +1,14 @@
 import { Router } from "express";
-import { obtenerPedidos,insertarPedidos } from "../controles/pedidos.controles.mjs";
+import { obtenerPedidos,insertarPedidos, actualizarEstado,eliminarPedido } from "../controles/pedidos.controladore.mjs";
 
 
 
 const router = Router();
 
 
-router.get('/mesero',obtenerPedidos);
-router.post('/mesero', insertarPedidos);
-// router.post('/mesero',obtenerPedidos);
-// router.get('/Chef',pedidosChef);
-// router.post('/Chef',pedidosChef);
+router.get('/mesero',obtenerPedidos); 
+router.put('/mesero', actualizarEstado);
+router.post('/mesero',insertarPedidos);
+router.delete('/mesero',eliminarPedido);
 
 export default router
