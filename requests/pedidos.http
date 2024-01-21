@@ -1,37 +1,60 @@
 @api = http://localhost:4000/mesero
+@api2 = http://localhost:4000/login
+@api3 = http://localhost:4000/crearU
 
 //buscar
 GET  {{api}}
 
-
 ###
-//
+//insertar
 POST {{api}}
 Content-Type: application/json
 
 {
-  "platillo": "perro",
-  "cantidad": 1,
-  "cliente": "juan",
-  "precio": 16000,
-  "observaciones": "poca salsa",
+  "platillo": "mondongo",
+  "cantidad": 2,
+  "cliente": "jhoana",
+  "precio": 12200,
+  "observaciones": "ningun requerimiento",
   "estado": "pedido"
 }
 
 ###
+//actualizar
 PUT {{api}}
 Content-Type: application/json
 
 {
-  "id_pedido": 53,
+  "id_pedido": 59,
   "estado": "prueba"
 }
 
-
 ###
+
 DELETE {{api}}
 Content-Type: application/json
 
 {
-  "id_pedido":50
+  "id_pedido": 1
+}
+
+
+###
+//verificar usuario
+POST {{api2}} 
+Content-Type: application/json
+
+{
+  "nombre": "camila",
+  "contrasena": "1234"
+}
+
+###
+POST {{api3}}
+Content-Type: application/json
+
+{
+  "nombre": "carlos",
+  "contrasena": "1234",
+  "tipoUsuario": "cajero"
 }

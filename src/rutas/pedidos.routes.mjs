@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { obtenerPedidos,insertarPedidos, actualizarEstado,eliminarPedido } from "../controles/pedidos.controladore.mjs";
+import { obtenerPedidos,insertarPedidos, actualizarEstado,eliminarPedido,verificacion, crearU} from "../controles/pedidos.controladore.mjs";
 
 
 
@@ -10,5 +10,10 @@ router.get('/mesero',obtenerPedidos);
 router.put('/mesero', actualizarEstado);
 router.post('/mesero',insertarPedidos);
 router.delete('/mesero',eliminarPedido);
+router.post('/login',verificacion);
+router.post('/crearU',crearU);
+
+
+
 
 export default router

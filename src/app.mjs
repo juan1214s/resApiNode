@@ -1,6 +1,7 @@
 import express from "express";
 import config from "./config.mjs";
 import obtenerPedidos from "./rutas/pedidos.routes.mjs"
+import cors from "cors"
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.set(`port`,config.port);
 
 //middleware
 
+app.use(cors());
 //le digo al servidor q acepte formato json
 app.use(express.json());
 //para q tambien reciba datos de los formularios html
