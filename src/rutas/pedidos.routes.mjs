@@ -10,7 +10,7 @@ router.get('/mesero',obtenerPedidos);
 router.put('/mesero', actualizarEstado);
 router.post('/mesero',insertarPedidos);
 router.delete('/mesero',eliminarPedido);
-router.post('/login',verificacion);
+router.get('/login',verificacion);
 router.post('/crearU',crearU);
 
 

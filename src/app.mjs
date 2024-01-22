@@ -11,8 +11,6 @@ let port;
 //Este caso importo el puerto definido
 app.set(`port`,config.port);
 
-//middleware
-
 app.use(cors());
 //le digo al servidor q acepte formato json
 app.use(express.json());
