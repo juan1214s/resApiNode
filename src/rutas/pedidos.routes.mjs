@@ -1,17 +1,22 @@
 import { Router } from "express";
-import { obtenerPedidos,insertarPedidos, actualizarEstado,eliminarPedido,verificacion, crearU} from "../controles/pedidos.controladore.mjs";
+import { obtenerPedidos,insertarPedidos, actualizarEstado,eliminarPedido} from "../controles/pedidos.controladore.mjs";
+import {verificacion,crearU} from "../controles/login.mjs"
 
 
 
 const router = Router();
 
+// Rutas relacionadas con el mesero
+router.route('/mesero')
+  .get(obtenerPedidos)
+  .put(actualizarEstado)
+  .post(insertarPedidos)
+  .delete(eliminarPedido);
 
-router.get('/mesero',obtenerPedidos); 
-router.put('/mesero', actualizarEstado);
-router.post('/mesero',insertarPedidos);
-router.delete('/mesero',eliminarPedido);
-router.get('/login',verificacion);
-router.post('/crearU',crearU);
+// Otras rutas
+router.post('/login', verificacion);
+router.post('/crearU', crearU);
+
 
 
 
